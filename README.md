@@ -1,79 +1,43 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Proyecto Final: Aplicación Móvil en React Native y TypeScript
 
-# Getting Started
+## Descripción del Proyecto
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Este es el proyecto final del curso **Desarrollo de Aplicaciones Móviles 2**, donde se desarrolló una aplicación móvil utilizando **React Native** y **TypeScript**. La aplicación permite navegar entre las peliculas con información detallada de cada una.
 
-## Step 1: Start the Metro Server
+## Tecnologías Utilizadas
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- **React Native**: Framework para desarrollar aplicaciones móviles de alto rendimiento usando JavaScript y React.
+- **TypeScript**: Superset de JavaScript que agrega tipado estático, mejorando la calidad del código y la experiencia de desarrollo.
+- **React Navigation**: Biblioteca para manejar la navegación dentro de la aplicación.
+- **Axios** : Para consumir APIs en proyecto.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Objetivo del Proyecto
 
-```bash
-# using npm
-npm start
+El objetivo de este proyecto es aplicar los conocimientos adquiridos durante el curso de **Desarrollo de Aplicaciones Móviles 2** y demostrar las habilidades adquiridas en el uso de **React Native** y **TypeScript** para crear una aplicación funcional. Este proyecto tiene como finalidad mostrar la navegación entre pantallas y manejar el estado de la aplicación de manera eficiente.
 
-# OR using Yarn
-yarn start
-```
+## Características Principales
 
-## Step 2: Start your Application
+- **Pantalla Principal**: Un login que permite iniciar sesión y registrarse.
+- **Navegación**: Usando `React Navigation` para navegar entre pantallas.
+- **Interfaz Reactiva**: Interacciones con botones y eventos de navegación.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Instalación y Uso
 
-### For Android
+1. **Clonar el repositorio**:
 
-```bash
-# using npm
-npm run android
+   ```bash
+   git clone https://github.com/Gian1611/appProyecto.git
 
-# OR using Yarn
-yarn android
-```
+   ```
 
-### For iOS
+2. **Instalar dependencias: Asegúrate de tener Node.js instalado y ejecuta:**:
 
-```bash
-# using npm
-npm run ios
+   ```bash
+   npm install
 
-# OR using Yarn
-yarn ios
-```
+   ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+3. **Iniciar proyecto**:
+   ```bash
+   npm start
+   ```
