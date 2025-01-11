@@ -37,8 +37,17 @@ export const PeliculasListScreen = () => {
         data={populares}
         keyExtractor={item => item.id.toString()}
         numColumns={2}
-        renderItem={({item}) => <PeliCard pelicula={item} onPress={() => []} />}
-      />
+        renderItem={({item}) => (
+        <PeliCard 
+        pelicula={item} 
+        onPress={() =>
+              navigation.navigate('PeliculaDetail', {
+                id: item.id
+              })
+               } 
+               />
+              )}
+              />
     </View>
   );
 };

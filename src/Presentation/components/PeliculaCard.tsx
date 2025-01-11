@@ -21,3 +21,4 @@ export const PeliCard = ({pelicula, onPress}: Props) => {
     </TouchableOpacity>
   );
 };
+

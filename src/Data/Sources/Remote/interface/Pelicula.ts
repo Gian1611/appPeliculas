@@ -30,6 +30,7 @@ export enum OriginalLanguage {
 }
 
 export interface TmdbAPIPelicula {
+  valoracion: number;
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: BelongsToCollection;
