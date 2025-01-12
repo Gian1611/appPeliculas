@@ -1,8 +1,8 @@
-export interface Pelicula {
+export interface Serie {
   id: number;
-  title: string;
+  name: string;
   overview: string;
-  release_date: string;
+  first_air_date: string;
   poster_path: string;
   popularity: number;
   vote_average: number;

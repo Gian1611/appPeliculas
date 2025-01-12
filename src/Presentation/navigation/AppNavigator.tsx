@@ -1,20 +1,21 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import RegisterScreen from '../screens/Login/RegisterScreen';
 import HomeScreen from '../screens/Variado/HomeScreen';
 import LoginScreen from '../screens/Login/LoginScreen';
 import PerfilScreen from '../screens/Variado/PerfilScreen';
-import { PeliculasListScreen } from '../screens/Variado/PeliculasScreen';
-import { PeliculaDetailScreen } from '../screens/Variado/PeliculaDetailScreen'; // Importar la pantalla de detalles
-import { Pelicula } from '../../Domain/entities/Pelicula'; // Asegúrate de tener acceso al tipo `Pelicula`
+import {PeliculasListScreen} from '../screens/Variado/PeliculasScreen';
+import {PeliculaDetailScreen} from '../screens/Variado/PeliculaDetailScreen';
+import {SeriesListScreen} from '../screens/Variado/SeriesScreen';
 
 export type RootStackParams = {
   Login: undefined;
   Register: undefined;
-  Home: { id: string };
-  Perfil: { id: string };
+  Home: {id: string};
+  Perfil: {id: string};
   PeliculasList: undefined;
-  PeliculaDetail: { id: number }; // Agregado para los detalles de películas
+  PeliculaDetail: {id: number}; // Agregado para los detalles de películas
+  SeriesList: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -26,7 +27,7 @@ const AppNavigator = () => {
       <Stack.Screen
         name="Register"
         component={RegisterScreen}
-        options={{ title: 'Registro' }}
+        options={{title: 'Registro'}}
       />
       <Stack.Screen
         name="Home"
@@ -39,7 +40,7 @@ const AppNavigator = () => {
       <Stack.Screen
         name="Perfil"
         component={PerfilScreen}
-        options={{ title: 'Perfil del Usuario' }}
+        options={{title: 'Perfil del Usuario'}}
       />
       <Stack.Screen
         name="PeliculasList"
@@ -54,8 +55,16 @@ const AppNavigator = () => {
         name="PeliculaDetail"
         component={PeliculaDetailScreen}
         options={{
-          title: 'Detalles de la Película', // Título del encabezado
-          headerBackTitle: 'Volver', // Texto del botón de retroceso
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="SeriesList"
+        component={SeriesListScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerBackTitleVisible: false,
         }}
       />
     </Stack.Navigator>

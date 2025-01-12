@@ -14,7 +14,8 @@ export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 20,
+    paddingTop: 15,
+    paddingHorizontal: 15,
     backgroundColor: colors.backgroundLight,
   },
   input: {flex: 1, height: 45, padding: 10},
@@ -45,7 +46,7 @@ export const globalStyles = StyleSheet.create({
     textAlign: 'center',
     color: colors.textDark,
     marginBottom: 10,
-    fontSize: 20,
+    fontSize: 23,
     fontWeight: 'bold',
   },
   text: {
@@ -80,7 +81,6 @@ export const globalStyles = StyleSheet.create({
     color: '#007BFF',
     marginBottom: 24,
   },
- 
   label: {
     fontSize: 18,
     color: '#0056B3',
@@ -95,6 +95,7 @@ export const globalStyles = StyleSheet.create({
   },
   image: {
     width: '100%',
+    borderRadius: 10,
     height: 240,
     resizeMode: 'cover',
   },
@@ -102,37 +103,6 @@ export const globalStyles = StyleSheet.create({
     width: 250,
     height: 250,
     marginBottom: 20,
-  },
-  titulo2:{
-    fontSize: 20,
-    color: '#fff',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 10,
-  },
-
-  titulo3:{
-    fontSize: 40,
-    color: '#fff',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 0,
-  },
-  image2:{
-    flex: 1, // Ocupa todo el espacio disponible
-    width: '100%',
-    height: '100%',
-    borderRadius: 10,
-    marginBottom: 15,
-  },
-  container2: {
-    flex: 1,
-    backgroundColor: '#101010', 
-    //justifyContent: 'center',
-    padding: 20,
-  },
-  rating: {
-    marginTop: 5, // Espaciado entre las estrellas y el título
   },
   description: {
     fontSize: 12,
@@ -142,32 +112,24 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   card: {
-   // backgroundColor: colors.card,
-   backgroundColor: '#1c1c1c', // Fondo de la tarjeta en tono oscuro
-   borderRadius: 20,
-   padding: 15,
-   alignItems: 'center',
-   shadowColor: '#000',
-   shadowOpacity: 0.8,
-   shadowRadius: 10,
-   elevation: 10,
-  },
- card2:{
-  width: '90%',
-  backgroundColor: '#1c1c1c', // Fondo de la tarjeta en tono oscuro
-  borderRadius: 20,
-  padding: 15,
-  alignItems: 'center',
-  shadowColor: '#000',
-  shadowOpacity: 0.8,
-  shadowRadius: 10,
-  elevation: 10, // Sombra para dar un efecto de profundidad
+    backgroundColor: colors.card,
+    padding: 5,
+    borderRadius: 10,
+    marginBottom: 10,
+    width: '100%',
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.15,
+    shadowRadius: 5,
+    elevation: 5,
+    borderColor: '#007BFF',
+    borderWidth: 1,
   },
   peliCard: {
     flex: 1,
-    alignItems: 'center',
+    //alignItems: 'center',
     backgroundColor: colors.card,
-    padding: 10,
+    padding: 3,
     marginVertical: 5,
     margin: 8,
     borderRadius: 10,
@@ -180,8 +142,18 @@ export const globalStyles = StyleSheet.create({
     shadowOpacity: 0.15,
     shadowRadius: 5,
   },
+  cardvaloration: {
+    flexDirection: 'row',
+    marginTop: 10,
+    marginLeft: 5,
+    textAlign: 'left',
+  },
+  textvalo: {
+    color: colors.textDark,
+    fontSize: 15,
+  },
   cardTitle: {
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 10,

@@ -3,12 +3,13 @@ import {View, TextInput, Text, Alert} from 'react-native';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import {globalStyles} from '../../theme/GlobalStyles';
-import {RootStackParams} from '../../navigation/AppNavigator';
+//import {RootStackParams} from '../../navigation/AppNavigator';
 import {
   getIdBynameUseCase,
   LoginUseCase,
 } from '../../../Domain/useCases/LoginUseCase';
 import {ButtonComponent} from '../../components/Mybutton';
+import {RootStackParams} from '../../navigation/pruebanavigator';
 
 const LoginScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
@@ -18,7 +19,8 @@ const LoginScreen = () => {
   const hacerLogin = () => {
     if (LoginUseCase(username, contra)) {
       const id = getIdBynameUseCase(username, contra);
-      navigation.reset({index: 0, routes: [{name: 'Home', params: {id}}]});
+      navigation.reset({index: 0, routes: [{name: 'MainTabs', params: {id}}]});
+      //navigation.reset({index: 0, routes: [{name: 'Home', params: {id}}]});
     } else {
       Alert.alert('Error', 'Usuario o contraseña incorrectos');
     }

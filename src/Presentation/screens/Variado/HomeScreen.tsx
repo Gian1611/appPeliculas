@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, Text} from 'react-native';
 import {
   NavigationProp,
   RouteProp,
@@ -27,6 +27,10 @@ const HomeScreen = () => {
       <ButtonComponent
         onAction={() => navigation.navigate('PeliculasList')}
         label="Peliculas mas populares"
+      />
+      <ButtonComponent
+        onAction={() => navigation.navigate('SeriesList')}
+        label="Series de la semana"
       />
       <ButtonComponent
         onAction={() => navigation.navigate('Perfil', {id: params.id})}

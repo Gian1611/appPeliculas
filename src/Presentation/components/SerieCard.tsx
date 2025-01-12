@@ -1,20 +1,19 @@
-import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Serie} from '../../Domain/entities/Series';
 import {globalStyles} from '../theme/GlobalStyles';
-import {Pelicula} from '../../Domain/entities/Pelicula';
 import Icon from '@react-native-vector-icons/fontawesome6';
 
 interface Props {
-  pelicula: Pelicula;
+  serie: Serie;
   onPress: () => void;
 }
 
-export const PeliCard = ({pelicula, onPress}: Props) => {
+export const SerieCard = ({serie, onPress}: Props) => {
   return (
     <TouchableOpacity style={globalStyles.peliCard} onPress={onPress}>
       <Image
         source={{
-          uri: `https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`,
+          uri: `https://image.tmdb.org/t/p/w500/${serie.poster_path}`,
         }}
         style={globalStyles.image}
       />
@@ -22,13 +21,11 @@ export const PeliCard = ({pelicula, onPress}: Props) => {
         <Icon name="star" size={20} color="yellow" iconStyle="solid" />
         <Text style={globalStyles.textvalo}>
           {' '}
-          {pelicula.vote_average ? pelicula.vote_average.toFixed(1) : 'N/A'}
+          {serie.vote_average ? serie.vote_average.toFixed(1) : 'N/A'}
         </Text>
       </View>
       <Text style={globalStyles.cardTitle}>
-        {pelicula.title.length > 33
-          ? `${pelicula.title.slice(0, 33)}...`
-          : pelicula.title}
+        {serie.name.length > 33 ? `${serie.name.slice(0, 33)}...` : serie.name}
       </Text>
     </TouchableOpacity>
   );

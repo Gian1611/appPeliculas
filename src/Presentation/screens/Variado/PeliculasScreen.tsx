@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {View, Text, FlatList, ActivityIndicator} from 'react-native';
-import {RootStackParams} from '../../navigation/AppNavigator';
+//import {RootStackParams} from '../../navigation/AppNavigator';
 import {GetPopularPeliculasUseCase} from '../../../Domain/useCases/getPeliculas';
 import {PeliCard} from '../../components/PeliculaCard';
 import {globalStyles} from '../../theme/GlobalStyles';
 import {Pelicula} from '../../../Domain/entities/Pelicula';
+import {RootStackParams} from '../../navigation/pruebanavigator';
 
 export const PeliculasListScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
@@ -38,16 +39,16 @@ export const PeliculasListScreen = () => {
         keyExtractor={item => item.id.toString()}
         numColumns={2}
         renderItem={({item}) => (
-        <PeliCard 
-        pelicula={item} 
-        onPress={() =>
+          <PeliCard
+            pelicula={item}
+            onPress={() =>
               navigation.navigate('PeliculaDetail', {
-                id: item.id
+                id: item.id,
               })
-               } 
-               />
-              )}
-              />
+            }
+          />
+        )}
+      />
     </View>
   );
 };
