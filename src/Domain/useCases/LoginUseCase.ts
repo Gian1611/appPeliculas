@@ -15,10 +15,10 @@ export const RegistrarUseCase = (user: User): void => {
 export const getIdBynameUseCase = (
   username: string,
   contra: string,
-): String | null => {
+): string | null => {
   return getIdByname(username, contra) || null;
 };
 
-export const getUserByIdUseCase = (id: string): User | null => {
+export const getUserByIdUseCase = (id: string | null): User | null => {
   return getUserById(id) || null;
 };

@@ -26,7 +26,7 @@ export const PeliculasListScreen = () => {
   if (isLoading) {
     return (
       <View style={globalStyles.container}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color="#d68b13" />
       </View>
     );
   }
@@ -48,6 +48,7 @@ export const PeliculasListScreen = () => {
             }
           />
         )}
+        contentContainerStyle={{paddingBottom: 60}} // Ajusta según la altura del BottomTabs
       />
     </View>
   );

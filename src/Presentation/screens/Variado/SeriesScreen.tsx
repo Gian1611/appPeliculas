@@ -26,7 +26,7 @@ export const SeriesListScreen = () => {
   if (isLoading) {
     return (
       <View style={globalStyles.container}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color="#d68b13" />
       </View>
     );
   }
@@ -39,6 +39,7 @@ export const SeriesListScreen = () => {
         keyExtractor={item => item.id.toString()}
         numColumns={2}
         renderItem={({item}) => <SerieCard serie={item} onPress={() => []} />}
+        contentContainerStyle={{paddingBottom: 70}} // Ajusta según la altura del BottomTabs
       />
     </View>
   );

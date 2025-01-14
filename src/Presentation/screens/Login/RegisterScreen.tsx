@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {View, TextInput, Text, Alert, TouchableOpacity} from 'react-native';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {RootStackParams} from '../../navigation/AppNavigator';
 import {globalStyles} from '../../theme/GlobalStyles';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import {User} from '../../../Domain/entities/User';
 import {RegistrarUseCase} from '../../../Domain/useCases/LoginUseCase';
+import {RootStackParams} from '../../navigation/pruebanavigator';
 
 const RegisterScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
@@ -28,11 +28,13 @@ const RegisterScreen = () => {
 
   return (
     <View style={globalStyles.container}>
+      <Text style={globalStyles.tituloleft}>Registro</Text>
       <View style={globalStyles.inputContainer}>
         <Icon name="user" size={20} color="#A569BD" style={globalStyles.icon} />
         <TextInput
           style={globalStyles.input}
           placeholder="Nombre"
+          placeholderTextColor="#b0acac"
           value={nombre}
           onChangeText={setNombre}
         />
@@ -43,6 +45,7 @@ const RegisterScreen = () => {
         <TextInput
           style={globalStyles.input}
           placeholder="Apellido"
+          placeholderTextColor="#b0acac"
           value={apellido}
           onChangeText={setApellido}
         />
@@ -53,6 +56,7 @@ const RegisterScreen = () => {
         <TextInput
           style={globalStyles.input}
           placeholder="Usuario"
+          placeholderTextColor="#b0acac"
           value={username}
           onChangeText={setUsername}
         />
@@ -69,6 +73,7 @@ const RegisterScreen = () => {
         <TextInput
           style={globalStyles.input}
           placeholder="Contraseña"
+          placeholderTextColor="#b0acac"
           secureTextEntry
           value={contra}
           onChangeText={setContra}

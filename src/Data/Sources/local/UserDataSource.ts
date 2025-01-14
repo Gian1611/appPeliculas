@@ -3,10 +3,10 @@ import {User} from '../../../Domain/entities/User';
 let users: User[] = [
   {
     id: '1',
-    username: 'johndoe',
+    username: 'gian',
     contra: '1234',
-    nombre: 'John',
-    apellido: 'Doe',
+    nombre: 'Giancarlos',
+    apellido: 'Romero',
   },
   {
     id: '2',

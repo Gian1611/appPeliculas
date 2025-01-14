@@ -1,23 +1,17 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {
-  NavigationProp,
-  RouteProp,
-  useNavigation,
-  useRoute,
-} from '@react-navigation/native';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {globalStyles} from '../../theme/GlobalStyles';
 //import {RootStackParams} from '../../navigation/AppNavigator';
 import {getUserByIdUseCase} from '../../../Domain/useCases/LoginUseCase';
 import {RootStackParams} from '../../navigation/pruebanavigator';
 import {ButtonComponent} from '../../components/Mybutton';
+import {useAuth} from '../../context/AuthContext';
 
 const ProfileScreen = () => {
-  //const params = useRoute<RouteProp<RootStackParams, 'MainTabs'>>().params;
   const navigation = useNavigation<NavigationProp<RootStackParams, 'Perfil'>>();
-  //const params = useRoute<RouteProp<RootStackParams, 'Perfil'>>().params;
-  //const {id} = route.params || {}; // Obtener el parámetro `id`.
-  const userData = getUserByIdUseCase('2');
+  const {userId} = useAuth();
+  const userData = getUserByIdUseCase(userId);
 
   const hacerLogout = () => {
     navigation.reset({

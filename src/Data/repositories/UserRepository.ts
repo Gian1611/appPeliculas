@@ -11,7 +11,7 @@ export class UserRepositoryImpl implements userRepository {
     return user ? user.id : null; // Retornar el ID del usuario o null
   }
 
-  getUserById(id: string): User | undefined {
+  getUserById(id: string | null): User | undefined {
     const users = getUsuarios();
     return users.find(user => user.id === id);
   }

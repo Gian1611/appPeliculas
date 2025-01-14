@@ -1,13 +1,15 @@
 import {StyleSheet} from 'react-native';
 
 const colors = {
-  primary: '#3498DB', // Celeste intenso
-  secondary: '#f5e7ae', // Crema
-  backgroundLight: '#f5efd7', // Fondo claro (casi blanco)
-  textDark: '#2C3E50', // Texto oscuro (azul grisáceo)
-  button: '#5DADE2', // Botón celeste
-  card: '#7dc2f0',
   buttonText: '#FFFFFF', // Texto en botones (blanco)
+
+  primary: '#22254b', // Morado oscurp
+  secondary: '#d68b13', // Naranja claro
+  backgroundLight: '#22254b', // Morado oscuro
+  moradoclaro: '#3b4080', // Morado claro
+  button: '#d68b13', // Naranja claro
+  textLight: '#d9d9d9', // gris claro
+  textDark: '#b0acac', // Texto oscuro (gris oscuro)
 };
 
 export const globalStyles = StyleSheet.create({
@@ -18,7 +20,21 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: colors.backgroundLight,
   },
-  input: {flex: 1, height: 45, padding: 10},
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: colors.primary,
+    borderRadius: 5,
+    backgroundColor: colors.moradoclaro,
+    paddingLeft: 10,
+  },
+  icon: {
+    marginRight: 10,
+    color: colors.textDark,
+  },
+  input: {flex: 1, height: 45, padding: 8, color: 'white'},
   button: {
     backgroundColor: colors.button,
     borderRadius: 8,
@@ -27,12 +43,12 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 10,
   },
   buttonText: {
-    color: colors.buttonText,
+    color: colors.primary,
     fontWeight: 'bold',
     fontSize: 16,
   },
   link: {
-    color: colors.primary,
+    color: colors.secondary,
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },
@@ -42,9 +58,17 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 14,
   },
+  tituloleft: {
+    textAlign: 'left',
+    color: 'white',
+    marginBottom: 15,
+    marginLeft: 5,
+    fontSize: 23,
+    fontWeight: 'bold',
+  },
   titulo: {
     textAlign: 'center',
-    color: colors.textDark,
+    color: 'white',
     marginBottom: 10,
     fontSize: 23,
     fontWeight: 'bold',
@@ -53,20 +77,6 @@ export const globalStyles = StyleSheet.create({
     color: colors.textDark,
     marginBottom: 10,
     fontSize: 15,
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-    borderWidth: 1,
-    borderColor: colors.primary,
-    borderRadius: 5,
-    backgroundColor: colors.secondary,
-    paddingLeft: 10,
-  },
-  icon: {
-    marginRight: 10,
-    color: colors.primary, // Icono con color celeste
   },
   containerPerfil: {
     flex: 1,
@@ -78,24 +88,27 @@ export const globalStyles = StyleSheet.create({
   tituloPerfil: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#007BFF',
+    color: 'white',
     marginBottom: 24,
   },
   label: {
     fontSize: 18,
-    color: '#0056B3',
+    color: colors.secondary,
     marginBottom: 4,
+    marginLeft: 10,
     fontWeight: 'bold',
   },
   value: {
     fontSize: 17,
-    color: '#212529',
+    color: colors.textLight,
     marginBottom: 16,
-    marginLeft: 15,
+    marginLeft: 17,
   },
   image: {
     width: '100%',
-    borderRadius: 10,
+    //borderRadius: 10,
+    borderTopLeftRadius: 10, // Redondea la esquina superior izquierda
+    borderTopRightRadius: 10, // Redondea la esquina superior derecha
     height: 240,
     resizeMode: 'cover',
   },
@@ -112,31 +125,26 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   card: {
-    backgroundColor: colors.card,
+    backgroundColor: colors.moradoclaro,
     padding: 5,
     borderRadius: 10,
-    marginBottom: 10,
+    marginBottom: 15,
     width: '100%',
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.15,
     shadowRadius: 5,
     elevation: 5,
-    borderColor: '#007BFF',
-    borderWidth: 1,
   },
   peliCard: {
     flex: 1,
-    //alignItems: 'center',
-    backgroundColor: colors.card,
-    padding: 3,
+    backgroundColor: colors.moradoclaro,
+    padding: 1,
     marginVertical: 5,
     margin: 8,
     borderRadius: 10,
     overflow: 'hidden',
     justifyContent: 'flex-start',
-    borderColor: '#007BFF',
-    borderWidth: 1,
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.15,
@@ -144,8 +152,9 @@ export const globalStyles = StyleSheet.create({
   },
   cardvaloration: {
     flexDirection: 'row',
+    alignItems: 'center', // Alinea verticalmente al centro
     marginTop: 10,
-    marginLeft: 5,
+    marginLeft: 8,
     textAlign: 'left',
   },
   textvalo: {
@@ -153,11 +162,13 @@ export const globalStyles = StyleSheet.create({
     fontSize: 15,
   },
   cardTitle: {
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: 'bold',
-    textAlign: 'center',
+    marginLeft: 8,
+    marginRight: 8,
+    textAlign: 'left',
     marginVertical: 10,
-    color: colors.textDark,
+    color: colors.textLight,
   },
 });
 

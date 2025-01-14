@@ -48,16 +48,18 @@ const MainTabs = () => (
           />
         );
       },
-      tabBarActiveTintColor: 'blue', // Color del ícono activo
-      tabBarInactiveTintColor: 'gray', // Color del ícono inactivo
+      tabBarActiveTintColor: '#d68b13', // Color del ícono activo
+      tabBarInactiveTintColor: '#d6d2d2', // Color del ícono inactivo
       tabBarLabelStyle: {
         fontSize: 15,
-        fontWeight: 'bold',
         paddingBottom: 5,
       },
       tabBarStyle: {
         paddingVertical: 5, // Agrega padding vertical
         height: 60, // Aumenta la altura si necesitas más espacio
+        backgroundColor: 'rgba(34, 37, 75, 0.96)', // Fondo con 90% de opacidad,
+        position: 'absolute',
+        elevation: 0,
       },
     })}>
     <Tab.Screen
@@ -78,7 +80,13 @@ const MainTabs = () => (
         headerTitle: '',
       }}
     />
-    <Tab.Screen name="Perfil" component={PerfilScreen} />
+    <Tab.Screen
+      name="Perfil"
+      component={PerfilScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
   </Tab.Navigator>
 );
 
@@ -96,7 +104,12 @@ const AppNavigator = () => (
     <Stack.Screen
       name="Register"
       component={RegisterScreen}
-      options={{title: 'Registro'}}
+      options={{
+        title: 'Registro',
+        headerTransparent: true,
+        headerTitle: '',
+        headerTintColor: 'white',
+      }}
     />
     {/* Flujo principal con Bottom Tabs */}
     <Stack.Screen

@@ -19,7 +19,7 @@ export const PeliCard = ({pelicula, onPress}: Props) => {
         style={globalStyles.image}
       />
       <View style={globalStyles.cardvaloration}>
-        <Icon name="star" size={20} color="yellow" iconStyle="solid" />
+        <Icon name="star" size={13} color="#d68b13" iconStyle="solid" />
         <Text style={globalStyles.textvalo}>
           {' '}
           {pelicula.vote_average ? pelicula.vote_average.toFixed(1) : 'N/A'}

@@ -11,13 +11,14 @@ import {
   RouteProp,
   useNavigation,
 } from '@react-navigation/native';
-import {RootStackParams} from '../../navigation/AppNavigator';
 import {DetailPelicula} from '../../../Domain/entities/DetailPelicula';
 import {GetDetailPeliculaUseCase} from '../../../Domain/useCases/getPeliculas';
 import {detalleStyles} from '../../theme/DetalleStyles';
 import {globalStyles} from '../../theme/GlobalStyles';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import {ScrollView} from 'react-native-gesture-handler';
+import LinearGradient from 'react-native-linear-gradient';
+import {RootStackParams} from '../../navigation/pruebanavigator';
 
 type Props = {
   route: RouteProp<RootStackParams, 'PeliculaDetail'>;
@@ -43,7 +44,7 @@ export const PeliculaDetailScreen = ({route}: Props) => {
   if (isLoading) {
     return (
       <View style={globalStyles.container}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color="#d68b13" />
       </View>
     );
   }
@@ -61,8 +62,18 @@ export const PeliculaDetailScreen = ({route}: Props) => {
         <TouchableOpacity
           style={detalleStyles.botonback}
           onPress={() => navigation.goBack()}>
-          <Icon name="backward" size={20} color="#f5e7ae" iconStyle="solid" />
+          <Icon name="backward" size={20} color="#ed9f21" iconStyle="solid" />
         </TouchableOpacity>
+
+        {/* Degradado entre la imagen y el contenido*/}
+        <LinearGradient
+          colors={[
+            'rgba(34, 37, 75, 0)',
+            'rgba(34, 37, 75, 0.7)',
+            'rgba(34, 37, 75, 1)',
+          ]} // Degradado transparente a morado
+          style={detalleStyles.gradient}
+        />
       </View>
 
       <View style={detalleStyles.container2}>
@@ -75,7 +86,7 @@ export const PeliculaDetailScreen = ({route}: Props) => {
 
         <Text style={detalleStyles.titulo2}>
           Valoración{' '}
-          <Icon name="star" size={20} color="#56a0d1" iconStyle="solid" /> :{' '}
+          <Icon name="star" size={15} color="#d68b13" iconStyle="solid" /> :{' '}
           {detail?.vote_average.toFixed(1)} / 10
         </Text>
 
@@ -87,7 +98,9 @@ export const PeliculaDetailScreen = ({route}: Props) => {
         </Text>
 
         {/* Descripcion */}
-        <Text style={detalleStyles.overview}>{detail?.overview}</Text>
+        <View style={detalleStyles.card}>
+          <Text style={detalleStyles.overview}>{detail?.overview}</Text>
+        </View>
       </View>
     </ScrollView>
   );
